@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Uma pergunta para você ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      background: linear-gradient(135deg, #ffe4ec, #fff5f8);
+    }
+
+    /* TELA INICIAL */
+    .tela {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .cartao {
+      width: 100%;
+      max-width: 450px;
+      padding: 40px 25px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 25px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+      animation: aparecer 1.2s ease;
+    }
+
+    .anel {
+      font-size: 65px;
+      animation: flutuar 2s infinite ease-in-out;
+    }
+
+    h1 {
+      color: #d6336c;
+      font-size: 32px;
+      margin: 20px 0 10px;
+    }
+
+    .pergunta {
+      font-size: 21px;
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    .botoes {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    button {
+      border: none;
+      padding: 15px;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      color: white;
+      background: linear-gradient(135deg, #ff4f81, #d6336c);
+      box-shadow: 0 8px 20px rgba(214,51,108,0.25);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.06);
+    }
+
+    button:active {
+      transform: scale(0.94);
+    }
+
+    /* SEGUNDA TELA */
+    #segundaTela {
+      display: none;
+      position: relative;
+    }
+
+    .mensagem {
+      position: relative;
+      z-index: 10;
+      max-width: 600px;
+      padding: 35px 25px;
+      text-align: center;
+      background: rgba(255,255,255,0.92);
+      border-radius: 30px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+      animation: zoom 1.5s ease;
+    }
+
+    .mensagem h2 {
+      color: #d6336c;
+      font-size: 30px;
+    }
+
+    .mensagem p {
+      color: #555;
+      font-size: 19px;
+      line-height: 1.7;
+    }
+
+    .assinatura {
+      margin-top: 25px;
+      color: #d6336c;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    /* CORAÇÕES */
+    .coracao {
+      position: absolute;
+      bottom: -50px;
+      font-size: 25px;
+      animation: subir 6s linear forwards;
+      pointer-events: none;
+    }
+
+    /* FLORES */
+    .flor {
+      position: absolute;
+      font-size: 35px;
+      animation: flor 4s ease-in-out infinite;
+    }
+
+    /* ANIMAÇÕES */
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes zoom {
+      from {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes flutuar {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @keyframes subir {
+      0% {
+        transform: translateY(0) scale(0.7);
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    @keyframes flor {
+      0%, 100% {
+        transform: rotate(-10deg) translateY(0);
+      }
+
+      50% {
+        transform: rotate(10deg) translateY(-15px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PRIMEIRA TELA -->
+  <section id="primeiraTela" class="tela">
+
+    <div class="cartao">
+
+      <div class="anel">💍</div>
+
+      <h1>Rora Lanquean Vida... ❤️</h1>
+
+      <p class="pergunta">
+        Aceita casar comigo?
+      </p>
+
+      <div class="botoes">
+
+        <button onclick="aceitou()">
+          Sim ❤️
+        </button>
+
+        <h1>OU</h1>
+
+        <button onclick="aceitou()">
+          Sim 💖
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SEGUNDA TELA -->
+  <section id="segundaTela" class="tela">
+
+    <div class="mensagem">
+
+      <div style="font-size:60px;">
+        💍❤️🌹
+      </div>
+
+      <h2>
+        Eu sabia! ❤️
+      </h2>
+
+      <p>
+        Obrigado por escolher viver essa história comigo.
+      </p>
+
+      <p>
+        É muito bom ter você na minha vida.
+        Você trouxe sentimentos, momentos e razões
+        para eu acreditar ainda mais no amor.
+      </p>
+
+      <p>
+        Quero continuar construindo nossa história,
+        vivendo cada momento ao seu lado e fazendo
+        dos nossos sonhos uma realidade.
+      </p>
+
+      <p>
+        Baonandje amo-te ta? Me perdoa por ser um cara 
+        complicado de lidar, saiba que eu nunca vou desistir
+        de você, ao menos que seja você que faça eu desistir,
+        mas sei que isso não vai acontecer, portanto... 💍❤️
+      </p>
+
+      <div class="assinatura">
+        Para sempre nós dois. ❤️
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <script>
+
+    function aceitou() {
+
+      // Esconde a primeira tela
+      document.getElementById("primeiraTela").style.display = "none";
+
+      // Mostra a segunda tela
+      document.getElementById("segundaTela").style.display = "flex";
+
+      // Começa a magia
+      criarCoracoes();
+      criarFlores();
+
+    }
+
+
+    function criarCoracoes() {
+
+      setInterval(() => {
+
+        const coracao = document.createElement("div");
+
+        coracao.classList.add("coracao");
+
+        const tipos = ["❤️", "💖", "💕", "💗", "💓"];
+
+        coracao.innerHTML =
+          tipos[Math.floor(Math.random() * tipos.length)];
+
+        coracao.style.left =
+          Math.random() * 100 + "vw";
+
+        coracao.style.animationDuration =
+          (4 + Math.random() * 4) + "s";
+
+        document.getElementById("segundaTela")
+          .appendChild(coracao);
+
+        setTimeout(() => {
+          coracao.remove();
+        }, 8000);
+
+      }, 300);
+
+    }
+
+
+    function criarFlores() {
+
+      const flores = [
+        "🌹",
+        "🌷",
+        "🌸",
+        "🌺",
+        "💐"
+      ];
+
+      for (let i = 0; i < 12; i++) {
+
+        const flor = document.createElement("div");
+
+        flor.classList.add("flor");
+
+        flor.innerHTML =
+          flores[Math.floor(Math.random() * flores.length)];
+
+        flor.style.left =
+          Math.random() * 95 + "vw";
+
+        flor.style.top =
+          Math.random() * 95 + "vh";
+
+        flor.style.animationDelay =
+          Math.random() * 2 + "s";
+
+        document.getElementById("segundaTela")
+          .appendChild(flor);
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
